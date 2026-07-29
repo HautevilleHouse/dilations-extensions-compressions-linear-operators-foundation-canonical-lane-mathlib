@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DilationsExtensionsCompressionsLinearOperatorsFoundation.OperatorSpace
+import HautevilleHouse.DilationsExtensionsCompressionsLinearOperatorsFoundation.Dilation
+import HautevilleHouse.DilationsExtensionsCompressionsLinearOperatorsFoundation.Extension
+import HautevilleHouse.DilationsExtensionsCompressionsLinearOperatorsFoundation.Compression
+
+namespace HautevilleHouse
+namespace DilationsExtensionsCompressionsLinearOperatorsFoundation
+
+def dilationExtensionCompressionClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem dilation_extension_compression_endgame (A : AdmissibleClass) : dilationExtensionCompressionClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DilationsExtensionsCompressionsLinearOperatorsFoundation
+end HautevilleHouse
